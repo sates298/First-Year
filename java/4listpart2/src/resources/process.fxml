@@ -1,0 +1,31 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane fx:controller="pl.swozniak.Controller"
+            xmlns:fx="http://javafx.com/fxml" >
+
+    <center>
+        <HBox alignment="CENTER">
+            <Label text="enter arguments: " id="text-section"/>
+            <TextField fx:id="enter"/>
+            <Button text="OK" onAction="#handleClickAction"/>
+        </HBox>
+    </center>
+
+    <bottom>
+        <VBox alignment="TOP_CENTER">
+            <Text fx:id="score" id="score-section" visible="false"/>
+        </VBox>
+
+    </bottom>
+
+    <stylesheets>
+        <URL value="@process.css"/>
+    </stylesheets>
+
+</BorderPane>

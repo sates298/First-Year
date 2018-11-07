@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121"
+            fx:controller="client.Controller">
+    <top>
+        <VBox spacing="10">
+            <HBox spacing="10">
+                <TextField fx:id="arguments" prefWidth="90" text="arguments"/>
+                <TextField fx:id="kValue" prefWidth="40" text="k"/>
+                <Button fx:id="createButton" onAction="#create" text="Create"/>
+                <Button fx:id="destroy" onAction="#destroy" text="Destroy" visible="false"/>
+                <TextField fx:id="extend" prefWidth="40" visible="false"/>
+                <Button fx:id="search" onAction="#search" text="Search" visible="false"/>
+                <Button fx:id="insert" onAction="#insert" text="Insert" visible="false"/>
+                <Button fx:id="delete" onAction="#delete" text="Delete" visible="false"/>
+            </HBox>
+            <Separator prefHeight="10"/>
+        </VBox>
+    </top>
+    <left>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <VBox spacing="10">
+                <ToggleButton id="integer" text="Integer">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="toggleButtons"/>
+                    </toggleGroup>
+                </ToggleButton>
+                <ToggleButton id="double" text="Double" toggleGroup="$toggleButtons"/>
+                <ToggleButton id="string" text="String" toggleGroup="$toggleButtons"/>
+            </VBox>
+            <Separator orientation="VERTICAL" prefWidth="10"/>
+
+        </HBox>
+    </left>
+    <center>
+        <Text fx:id="printed"/>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER">
+            <Text fx:id="score"/>
+        </HBox>
+    </bottom>
+</BorderPane>

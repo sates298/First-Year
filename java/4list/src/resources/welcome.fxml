@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<BorderPane fx:id="borderPane" fx:controller="com.swozniak.WelcomeController"
+            xmlns:fx="http://javafx.com/fxml">
+
+    <top>
+        <Text fx:id="welcomeText" BorderPane.alignment="TOP_CENTER" id="welcome-section">
+            Welcome in my program! :D
+        </Text>
+    </top>
+
+    <center>
+        <GridPane alignment="CENTER" vgap="10" hgap="10">
+
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Label text="Write range:" id="label1" fx:id="label1"/>
+                <Label text="Write number of arguments:" id="label2" fx:id="label2"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <TextField fx:id="range"/>
+                <TextField fx:id="howMany"/>
+            </VBox>
+
+            <Button GridPane.halignment="RIGHT" text="Next" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                    onAction="#handleNextButtonAction"/>
+
+            <MenuBar fx:id="menu" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="menu-section" >
+                <Menu text="Options">
+
+                    <MenuItem text="change font color" onAction="#handleChangeFontColorAction"/>
+                    <MenuItem text="change background color" onAction="#handleChangeBackgroundColorAction"/>
+                    <MenuItem text="exit" onAction="#handleExitAction"/>
+
+                </Menu>
+            </MenuBar>
+
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <Text fx:id="scoreText" visible="false" id="text-section"/>
+            </VBox>
+        </GridPane>
+    </center>
+
+    <stylesheets>
+        <URL value="@welcome.css"/>
+    </stylesheets>
+
+</BorderPane>
