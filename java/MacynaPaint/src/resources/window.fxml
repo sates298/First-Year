@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="pl.swozniak.Controller">
+
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem onAction="#save" text="Save" />
+            <MenuItem onAction="#load" text="Load" />
+            <SeparatorMenuItem />
+            <MenuItem onAction="#openInfoWindow" text="Info" />
+        </Menu>
+        <Menu text="Edit">
+            <MenuItem onAction="#clear" text="Clear" />
+        </Menu>
+    </MenuBar>
+
+    <HBox prefHeight="30.0" prefWidth="200.0" spacing="20">
+
+        <ToggleButton id="rectangle" text="Rectangle">
+            <toggleGroup>
+                <ToggleGroup fx:id="toggleButtons" />
+            </toggleGroup>
+        </ToggleButton>
+        <ToggleButton id="circle" text="Circle" toggleGroup="$toggleButtons" />
+        <ToggleButton id="polygon" text="Polygon" toggleGroup="$toggleButtons" />
+    </HBox>
+    <Separator prefHeight="10" prefWidth="357.0" />
+    <HBox minHeight="30" spacing="20">
+        <ColorPicker fx:id="colors" onAction="#setColor" />
+        <Text fx:id="valueX" text="X = " textAlignment="RIGHT" />
+        <Text fx:id="valueY" text="Y = " textAlignment="RIGHT" />
+    </HBox>
+    <Separator prefHeight="10" prefWidth="357.0" />
+
+    <Pane fx:id="pane" minWidth="Infinity" minHeight="Infinity" maxHeight="Infinity" maxWidth="Infinity"
+          onMouseClicked="#drawShape" />
+
+</VBox>

@@ -1,0 +1,24 @@
+.root{
+    -fx-background-color: linear-gradient(to right top, yellowgreen, chartreuse, cornflowerblue);
+}
+.menu-section{
+    -fx-font-weight: bold;
+}
+#welcome-section{
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+#label1{
+    -fx-text-fill: black;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+#label2{
+    -fx-text-fill: black;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+#text-section{
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
